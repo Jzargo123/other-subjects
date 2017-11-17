@@ -1,0 +1,251 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{subcaption}
+\usepackage{epigraph}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\usepackage{wrapfig}
+\newcommand{\p}{\partial}
+%\newcommand{\ve{}}{\overline{}}
+\newtheorem{determenition}{Определение}
+\newtheorem{theorem}{Теорема}	
+\newtheorem{problem}{задача}
+%\renewcommand{\ve}{\overline}
+\usepackage{fancybox, fancyhdr}
+\fancyhead[R]{Теорминимум по теормеху 1 семестр}
+\fancyhead[L]{}
+\fancyhead[C]{}
+
+\fancyfoot[R]{}
+\fancyfoot[L]{}
+\fancyfoot[C]{Страница \thepage}
+
+\begin{document}
+	\pagestyle{fancy}
+\section{Кинематика точки: траектория, скорость, ускорение (нормальное, тангенциальное)}
+	\textbf{Материальная точка} - геометрическая точка, которой поставлена в соответствие масса m. \\
+	\begin{wrapfigure}{r}{0.30\textwidth}
+		\vspace{-20pt}
+		%\begin{center}
+			\includegraphics[width=0.30\textwidth, height=0.2\textheight]{1}
+			\caption{Траектория}
+		%\end{center}
+		\vspace{-30pt}
+	\end{wrapfigure}
+	\textbf{Траектория точки} -  годограф радиус-вектора \\
+	$\bar{r}(t) =	
+		\begin{pmatrix} x(t) \\ y(t)\\ z(t) \end{pmatrix}$
+	\\
+	\textbf{Скорость} материальной точки \\
+	$\bar{v}=\frac{d\bar{r}}{dt}=\dot{\bar{r}} =
+		\begin{pmatrix} \dot{x}(t) \\ \dot{y}(t)\\ \dot{z}(t)\end{pmatrix}= 	
+		\begin{pmatrix} v_x(t) \\ v_y(t)\\ v_z(t)\end{pmatrix}= v \bar{\tau}$
+	\\$ v=\sqrt{(\bar{v}, \bar{v})}=\sqrt{v_x^2+v_y^2+v_z^2}=\frac{ds}{dt}$
+	\\
+	\textbf{Ускорение} материальной точки  $\overline{W}=\frac{d\bar{v}}{t}=\frac{d^2\bar{r}}{dt^2}=\ddot{\bar{r}} =
+		\begin{pmatrix} \ddot{x(t)} \\ \ddot{y(t)}\\ \ddot{z(t)} \end{pmatrix} =
+		\begin{pmatrix} W_x \\ W_y\\ W_z\end{pmatrix}
+	$
+
+
+
+
+	Значение ускорения: $W=\sqrt{W_x^2+W_y^2+W_z^2};$ \\
+	 $s $- длина дуги $\bar{r}(s)$, $\rho - $ радиус кривизны траектории \\
+	Т.к.  $\;\bar{v}=\dot{\bar{r}}(s)= \frac{d\bar{r}}{ds}\frac{ds}{dt} = \bar{\tau}v  \; \Rightarrow \; \overline{W}=\frac{d\bar{v}}{dt}=\frac{d(v\bar{\tau})}{dt}=\dot{v}\bar{\tau}+ \frac{v^2}{\rho} \bar{n}; \;\;\; 
+	W_\tau=\dot{v} = \frac{d^2s}{dt^2}, \; W_{\bar{n}}=\frac{v^2}{\rho}; $ 
+
+\section{Касательная, нормаль, бинормаль}
+	\begin{itemize}
+		\item \textbf{Орт касательной}: 
+		Направлен в сторону увеличения длины дуги
+			$$\tau=\frac{d\overline{r}}{ds}= \frac{\bar{v}}{v}; \;\; s=s(t); \;\; (\overline{\tau}, \overline{\tau})=1$$
+		\item \textbf{Орт нормали: } $\overline{n}$ - направление вектора кривизны. $\overline{n} \bot \overline{\tau}$
+			$$\text{Вектор кривизны: } \overline{k} = \frac{d\overline{\tau}}{ds} = \frac{d^2\overline{r}}{ds^2} = \frac{1}{\rho} \overline{n}$$
+		\item \textbf{Орт бинормали } $\overline{b}=[ \overline{\tau},\overline{n}] $
+	\end{itemize}
+
+\section{Криволин. координаты, коэфф. Ламе.   Разложение скорости и ускорения по базису ортогональных криволинейных координат}
+	$\bar{r}=\bar{r}(q_1, q_2, q_3); $\\
+	Тогда \textbf{ $q_1, q_2, q_3$} - криволинейные координаты, если \\
+	\begin{wrapfigure}{r}{0.25\textwidth}
+		\vspace{-80pt}
+		\begin{center}
+			\includegraphics[width=0.22\textwidth, height=0.13\textheight]{3}
+		\end{center}
+		\vspace{-40pt}
+	\end{wrapfigure} 
+	\begin{enumerate}
+		\item $q_1, q_2, q_3$ находятся во взаимном положении (однозначном) с $\forall$ положением точки в системе отсчета
+		\item Фиксируем $q_1^0, q_2^0, q_3^0$. Пусть $q_1$ меняется. Тогда $r(q_1, q_2^0, q_3^0)$ прочертит кривую - \textbf{координатную линию}
+		$$ H_i=\left| \frac{\partial\overline{r}}{\partial q_i} \right|; i=\overline{1,3} \text{ - коэффициенты Ламе}$$
+	 \vspace{-20pt}	
+	\end{enumerate}
+	 $$\text{В ПДСК  } H_i=\sqrt{ \left(\frac{\partial x }{\partial q_i}\right)^2  +  \left(\frac{\partial y }{\partial q_i}\right)^2 + \left(\frac{\partial z }{\partial q_i}\right)^2 }; \; 
+	\bar{v}=\sum\limits_{j=1}^3 H_j\dot{q}_j\bar{e}_j;$$
+	$$W_k=(\overline{W}, \bar{e}_k) = \frac{1}{H_k} \left(\frac{d}{dt} \left(\frac{\partial (\frac{v^2}{2})}{\partial \dot{q}_k}\right) - \frac{\partial (\frac{v^2}{2})}{\partial q_k} \right)$$
+	где $\bar{e}_1, \bar{e}_2, \bar{e}_3 $ - локальный базис криволинейных координат $\bar{e}_i=\frac{\partial \bar{r}}{\partial q_i}\frac{1}{H_i}$
+	\vspace{-10pt}
+\section{Формулы Эйлера и Ривальса (распределение скоростей и ускорений в твердом теле)}
+	\vspace{-10pt}
+	\begin{theorem}[Эйлера о распределении скоростей точек]
+		При произвольном движении твердого тела в любой момент времени $\exists! \bar{\omega}:$ скорости $\forall$ точек A и B выполнено: $\bar{v}_B = \bar{v}_A + \bar{\omega}\times \overline{AB} $  
+	\end{theorem}
+\vspace{-10pt}
+	\begin{proof}
+			$\dot{\bar{r}} = \omega\times \bar{r}  \Rightarrow 
+			\dot{\bar{r}}_B - \dot{\bar{r}}_A =
+			 \omega\times \bar{r}_B - \omega\times \bar{r}_A = \omega\times\overline{AB} $
+	\end{proof}
+	\begin{theorem}[Формула Ривальса]
+		При произвольном движении твердого тела в любой момент времени $\exists! \bar{\omega}:$ скорости $\forall$ точек A и B выполнено: $\exists! \bar{\varepsilon} = \frac{d\bar{\omega}}{dt}: \; \forall $ точек A и B выполнено: 
+		$\overline{W}_B = \overline{W}_A + \varepsilon \times \overline{AB}+ \Bigl[\bar{\omega}; [\bar{\omega}, \overline{AB} ] \Bigr] $ 
+	\end{theorem}
+	\begin{proof}
+		 $\frac{d(\text{Эйлер})}{dt}:\overline{W}_B = \overline{W}_A + \bar{\omega} \times \underbrace{(\dot{\bar{r}}_A - \dot{\bar{r}}_B)}_{\bar{v}_B - \bar{v}_A = \bar{\omega}\times \overline{AB}} + \varepsilon \times \overline{AB}$
+		
+	\end{proof}
+\vspace{-20pt}
+\section{Сложное движение. Сложение линейных и условных скоростей и ускорений}
+
+
+	
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.2\textwidth}
+		\includegraphics[width=1\textwidth, height=0.15\textheight]{4}
+		\caption{Эйлер}
+	\end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+	%(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.2\textwidth}
+		\includegraphics[width=1\textwidth, height=0.15\textheight]{5}
+		\caption{Сл. движ.}
+	\end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+	%(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=1\textwidth, height=0.15\textheight]{6}
+		\caption{Кориолис}
+	\end{subfigure}
+\end{figure}
+\vspace{-10pt}
+	abs (absolute) - абсолютное, por (portable) - переносное, rel (relative) - отн. cor(Coriolis). $\bar{r}=\bar{r}^{abs}=\bar{r}^{por}+\bar{r}^{rel} ;\; \bar{r}_O=\bar{r}^{por};\; \bar{\rho}=\bar{r}^{rel}=\sum\limits_{k=1}^{3}y_k(t)\bar{e}(t)$
+	
+	\begin{theorem}
+		$  \bar{v}^{por}=\bar{v}_{O'} + \bar{\omega} \times\bar{r} \text{ (как т. Эйлера);} \;\; \bar{v}^{abs} = \bar{v}^{por}+ \bar{v}^{rel};$
+	\end{theorem}
+\vspace{-8pt}
+	\begin{theorem}[Кориолиса]$\;$\\
+		$\overline{W}^{abs} = \overline{W}^{por} + \overline{W}^{rel} + \overline{W}^{cor}   \\
+		\overline{W}^{por} = \overline{W}_{O} + \bar{\varepsilon}\times\bar{r} + \bar{\omega} \times (\bar{\omega}\times \bar{r}) \;(\text{как т. Ривальса но }  \bar{r}=\overline{AB};\; \overline{W}_B=\overline{W}^{por})\\
+		\overline{W}^{cor} = 2\bar{\omega}^{por}\times \bar{v}^{rel} $\\
+		И все вместе: $\overline{W}^{abs} = \underbrace{\overline{W}_{O'} + \bar{\varepsilon}\times\bar{r} + \bar{\omega} \times (\bar{\omega}\times \bar{r})}_{\overline{W}^{por}} + \overline{W}^{rel} + \underbrace{2\bar{\omega}^{por}\times \bar{v}^{rel}}_{\overline{W}^{cor}} \\$
+		соотношения:$
+		\bar{\omega}^{abs}=\bar{\omega}^{por}+\bar{\omega}^{rel};\; \;
+		\bar{\varepsilon}^{abs} =\bar{\varepsilon}^{por}+\bar{\varepsilon}^{rel} + \bar{\omega}^{por}\times \bar{\omega}^{rel} $
+	\end{theorem}
+\vspace{-23pt}
+\section{Кинематический винт. Разложение движения на поступательное и вращательное}
+\vspace{-10pt}
+\begin{determenition}[Кинематический винт]
+	- это такое представление движения тела, в котором вектор скорости $\bar{v}_c \parallel \bar{\omega},  $ т.е. $\bar{v}_c \times \bar{\omega} =0 $
+\end{determenition}
+Т.к.  $\forall i,j\in$ телу, выполнено, $\bar{v}_j=\bar{v}_i+\bar{\omega}\times \bar{r}_{ij}$ то $(\bar{v}_j, \bar{\omega})= (\bar{v}_i, \bar{\omega})$. Инварианты: $\bar{\omega}=const$  и
+\vspace{-6pt}
+$$\bar{v}_{min} = \frac{(\bar{v}_A, \bar{\omega})}{|\bar{\omega}|}= \bar{v}_{c} = \bar{v}_O + \bar{\omega} \times \overline{OC} = \alpha \bar{\omega} $$
+	$$\forall i\Rightarrow   
+	\begin{pmatrix} v^x_i \\v^y_i\\ v^z_i\end{pmatrix} = 
+	\begin{pmatrix} v^x_0 \\v^y_0\\ v^z_0\end{pmatrix} + 
+	\begin{pmatrix} \omega^x \\\omega^y\\ \omega^z\end{pmatrix} \times 
+	\begin{pmatrix} x-x_0 \\y-y_0\\ z-z_0\end{pmatrix};
+	 \text{ ось винта: }\frac{v_i^x}{\omega^x}=\frac{v_i^y}{\omega^y} = \frac{v_i^z}{\omega^z}$$
+	Поступательное движение в твердом теле = поступательное движение со скоростью $\bar{v}_o (\parallel \bar{\omega}) $ + вращательное движение вокруг оси винта $(\parallel\bar{\omega}) $
+\section{Определение кинетического момента, кинетической энергии. Формулы преобразования кин. момента при замене полюса, разложение кин. энергии на энергию движения ц. масс и вращательную}	
+	\begin{determenition}[МИ/КМ]
+		Кинетическим моментом (моментом импульса) относительно точки O  с радиус вектором $\bar{r}_O$ называется:
+		$$\overline{K}_O=\int\limits_S(\bar{r} - \bar{r}_O) \times \bar{v} dm; \;\; 
+		\Bigg(\overline{K}_O=\sum\limits_{i=1}^N m_i \Big[(\bar{r}_i - \bar{r}_O)\times \bar{v}_i\Big] \Bigg)  $$
+	\end{determenition}
+	\begin{determenition}[Кин. энергия]
+		Кинетической энергией называется:
+		$$T=\frac 1 2 \int\limits_S(\bar{v}, \bar{v}) dm;\;\;  
+		\Bigg(T=\frac 1 2\sum\limits_{i=1}^N m_i (\bar{v}, \bar{v})\Bigg)$$
+	\end{determenition}
+	Т.к. $\bar{r}= \frac 1 m \int\limits_S \bar{r}dm, \; m=\int\limits_S dm;\;\;\overline{K}_A=\overline{K}_B+\overline{R}_{AB} \times m_{\Sigma}\bar{v}_C$\\
+	 З. изм. МИ:
+	\boxed{$$\dot{\overline{K}}_O=\overline{M}^{\text{внеш}}-m \big[\overline{V}_O, \overline{V}_C\big]$$}$\xrightarrow{\overline{V}_O=0\; or \;O\equiv C }$  ЗСМИ:	\boxed{$$\dot{\overline{K}}_O=\overline{M}^{\text{внеш}}}\\
+	
+	\begin{theorem}[Кенига]
+		Кинетическая энергия = кин. энергия материальной точки, помещенной в центр масс и кин энергии движения системы относительно центра масс
+		$$T= \frac{m v_c^2}{2} + T_{rel} + \Big(\bar{v}_\delta; m_\Sigma (\bar{}_C - \bar{v}_A) \Big) $$
+		Для твердого тела: \boxed{ $$T=\frac{1}{2} m v_C^2 + \frac{1}{2}I \omega^2$$ }, (где I относительно оси $\parallel \bar{\omega}$ и проходящей через центр масс)
+	\end{theorem}	
+\section{Основные законы динамики. Законы Ньютона, закон изменения кин. момента, ЗСЭ.}
+	$\overline{F}=\overline{F}^e + \overline{F}^i, $ где $\overline{F}^e$ - внешние силы. $\overline{F}^i$ -силы внутри системы.\\
+	Работа сил: $\delta A = (\overline{F}, \delta \bar{r}).\; A_{12}=T_2-T_1;\; N=\frac{\delta A}{\delta t} $ - мощность.\\
+	 $\overline{M}= \bar{r}\times \overline{F}$ - момент силы. $\bar{r} $ проведен от оси вращения до точки приложения силы.
+	\textbf{2 Закон Ньютона: } $\overline{F} = m\overline{W}, \; \dot{p}=\overline{F}^e,$ где $\overline{F}^e\; - \; \sum$  внешняя сила.
+	\begin{theorem}[о движении центра масс:] $m\dot{\bar{v}}_C = \overline{F}^e $
+	\end{theorem}
+	\begin{theorem}[Закон изменения кин. момента ] $\dot{\overline{K}}_0 = -m\bar{v}_0\times\bar{v}_C + \overline{M}_0^e $\\ где $\overline{M}_0^e $ - момент внешних сил
+	\end{theorem}
+	\begin{theorem}[ЗСЭ]
+		Полная механическая энергия системы не изменяется во времени, если все действующие силы потенциальны, а их потенциал не зависит от времени
+	\end{theorem}
+	
+\section{Законы динамики для НСО. Кориолисовы и переносные силы инерции}	
+	\vspace{-30pt}
+	$$\overline{W}_p^{abs} = \overline{W}_p^{por} + \overline{W}_p^{rel} + \overline{W}_p^{cor} \;\; \Rightarrow \;\;m\overline{W}_{rel} = \overline{F} + \overline{F}_{por} + \overline{F}_{cor} $$
+	$$\overline{F}_{por} = -m\overline{W}_{por}; \; \overline{F}_{cor} = -2m\bar{\omega}^{por}\times \bar{v}^{rel} $$
+	$$\dot{\overline{K}}_A = \overline{M}_F + \overline{M}_{per} + \overline{M}_{cor} $$
+	$$\overline{W}_{por} = \overline{W}_0+ \bar{\varepsilon}\times \bar{\rho} + \bar{\omega}\times (\bar{\omega}\times \bar{\rho}) $$
+	\vspace{-20pt}
+\section{Динамика систем переменного состава. Закон изменения импульса. Закон изменения кин. момента}
+	$p_1$ -уходит.  $p_2$ - приходит. $\Delta \bar{p}=\Delta \bar{p} - \Delta \bar{p}_1 + \Delta \bar{p}_2;\;$ \\
+	$m= m_0 - m_1 +m_2;\;\; \dot{\overline{K}}_0 = \overline{M}_0 - \overline{M}_{1} + \overline{M}_{2};  $
+	$$\dot{\bar{p}} = \overline{F} - \overline{F}_1 + \overline{F}_2; \; \;
+	\overline{F}_1= \lim\limits_{\Delta t \rightarrow 0} \frac{\Delta p_1}{\Delta t};\;\;
+	\overline{F}_2= \lim\limits_{\Delta t \rightarrow 0} \frac{\Delta p_2}{\Delta t} $$
+	
+	Где $\bar{u}_1 = \bar{v}_1-\bar{v};\;\bar{u}_2 = \bar{v}_2-\bar{v} $ - абсолютные скорости 
+	$$\boxed{m\dot{\bar{v}}=\overline{F} - \dot{m}_1(\bar{v}_1-\bar{v}) + \dot{m}_2 (\bar{v}_2-\bar{v});} \text{- Уравнение Мещерского} $$
+	Тогда при $\overline{F}_{\text{внеш}}=0$, $m_2=const; $ и после интегрирования получим:
+	$$\boxed{v(t)= v_0 + u \ln \frac{m_0}{m(t)}}\text{ - формула Циолковского} $$
+\section{Движение точки в центральном поле. Интеграл площадей, интеграл энергии}	
+	Закон сохранения кин. момента $\overline{K}_0 = const$ 
+	$\overline{F}= f(r)\frac{\bar{r}}{|\bar{r}|}; \; f=f(t,\bar{r}, \dot{r});\\
+	\rho^2\dot{\varphi} = c;  \;\; \bar{c}=\bar{r}\times \bar{v};$ -  приведенный момент импульса 
+	$$ \textbf{Интеграл площадей: } \;\frac{dS}{dt} = \frac 1 2 \rho^2\dot{\varphi} = \frac 1 2 c = \frac 1 4 \frac{K_0}{m} = const$$
+	$$ \textbf{Уравнение Бине: } \; u'' + u = -\frac{f}{mc^2u^2} \;\Rightarrow\; \dot{r} = -c \dot{u}, \text{  где } u=\frac{1}{r} $$
+	\\
+	Рассмотрим поля тяготения $f=-\frac{\gamma M}{r^2}= - \frac{\mu}{r^2}$\\
+	Тогда ЗСЭ выполнимо: $\Rightarrow v^2-2\frac \mu r= const $\\
+	$$u''+ u = \frac \mu {c^2}; \; \Rightarrow \; u = \frac \mu {c^2} + A\cos(\varphi + \varphi_0) \; \Rightarrow \; r=\frac{p}{1+ e\cos(\varphi + \varphi_0)}$$
+		\begin{wrapfigure}{r}{0.3\textwidth}
+		\vspace{-20pt}
+		\begin{center}
+			\includegraphics[width=0.3\textwidth, height=0.2\textheight]{9}
+		\end{center}
+		\vspace{-10pt}
+	\end{wrapfigure}
+	Где $\boxed{p=\frac \mu {c^2}; e= \frac{Ac^2}{\mu}\geq 0}$ - эксцентриситет. \\
+	Тогда возможны случаи:
+	\vspace{-5pt}
+	\begin{enumerate}
+		\item e=0 - окр радиуса $p$
+		\item 0<e<1 - эллипс
+		\item e=1 - парабола
+		\item e>1 - гипербола
+	\end{enumerate}
+	\begin{theorem}[Третий закон Кеплера] $$\frac{T^2}{a^3}= const $$
+	\end{theorem}
+\end{document}
